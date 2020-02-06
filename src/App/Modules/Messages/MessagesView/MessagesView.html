@@ -1,0 +1,126 @@
+﻿<div class="modal-header pad0-all">
+	<div class="pad15-all">
+		<button type="button" class="close" data-ng-click="Close()" aria-hidden="true">×</button>
+		<h3 class="modal-title">
+			<span>Messages</span>
+			<span class="label label-danger"> 2 new messages</span>
+		</h3>
+	</div>
+</div>
+
+<div class="modal-body">
+
+	<div class="message-view" style="background-color: #BBDEFB; ">
+		<div class="chat-message left">
+			<img class="message-avatar" src="Assets/img/Profile.png" alt="">
+			<div class="message">
+				<a class="message-author" href="javascript:;"> John Josief </a>
+				<span class="message-date"> September 26 2016, 3:48:46 PM </span>
+
+				<span class="margin5-bottom message-content">
+					I got all of them delivered to the main police station
+				</span>
+				<div class="label label-info"> All </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="message-view" style="background-color: #BBDEFB; ">
+		<div class="chat-message left">
+			<img class="message-avatar" src="Assets//img/Profile.png" alt="">
+			<div class="message">
+				<a class="message-author" href="javascript:;"> Michael Smith </a>
+				<span class="message-date"> September 26 2016, 3:48:46 PM </span>
+				<span class="margin5-bottom message-content">
+					Ok, perfect, I got the stolen cars and found a stash of money.
+				</span>
+				<div class="label label-info"> All </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="message-view">
+		<div class="chat-message left">
+			<img class="message-avatar" src="Assets//img/Profile.png" alt="">
+			<div class="message">
+				<a class="message-author" href="javascript:;"> John Josief </a>
+				<span class="message-date"> September 23 2016, 1:21:46 PM </span>
+				<span class="margin5-bottom message-content">
+					Grerat
+				</span>
+				<div class="label label-info margin5-right"> Mark Wahlberg </div>
+				<div class="label label-info"> Anne Hathaway </div>
+			</div>							  
+		</div>
+	</div>
+
+	<div class="message-view">
+		<div class="chat-message left">
+			<img class="message-avatar" src="Assets//img/Profile.png" alt="">
+			<div class="message">
+				<a class="message-author" href="javascript:;"> John Josief </a>
+				<span class="message-date"> September 26 2016, 3:48:46 PM </span>
+				<span class="margin5-bottom message-content">
+					I got all of them delivered to the main police station
+				</span>
+				<div class="label label-info"> All </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="message-view">
+		<div class="chat-message left">
+			<img class="message-avatar" src="Assets//img/Profile.png" alt="">
+			<div class="message">
+				<a class="message-author" href="javascript:;"> Michael Smith </a>
+				<span class="message-date"> September 26 2016, 3:48:46 PM </span>
+				<span class="margin5-bottom message-content">
+					Ok, perfect, I got the stolen cars and found a stash of money.
+				</span>
+				<div class="label label-info"> All </div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="message-view">
+		<div class="chat-message left">
+			<img class="message-avatar" src="Assets//img/Profile.png" alt="">
+			<div class="message">
+				<a class="message-author" href="javascript:;"> John Josief </a>
+				<span class="message-date"> September 23 2016, 1:21:46 PM </span>
+				<span class="margin5-bottom message-content">
+					Grerat
+				</span>
+				<div class="label label-info"> All </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal-footer pad0-all">
+	<div class="chat-form">
+		<div class="input-group">
+			<span class="input-group-addon" >To</span>
+			<select data-custom-select2 multiple class="form-control" data-ng-model="Filter.TypeId" placeholder="'All'">
+				<option value=""></option>
+				<option value="1">Sienna Miller </option>
+				<option value="2">Christian Bale </option>
+				<option value="3">Mark Wahlberg </option>
+				<option value="4">Anne Hathaway </option>
+				<option value="5">Jerry Maguire </option>
+			</select>
+		</div>
+	</div>
+	<div class="chat-form">
+		<div class="input-cont">
+			<textarea class="form-control" ng-model="Message" placeholder="Type a message here..."></textarea>
+		</div>
+		<div class="btn-cont">
+			<span class="arrow"> </span>
+			<a href="" class="btn btn-lg blue" ng-click="SendMessage()">
+				<i class="fa fa-share"></i>
+			</a>
+		</div>
+	</div>
+</div>

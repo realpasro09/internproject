@@ -1,0 +1,12 @@
+<div id="wrapper">
+
+	<div ng-include="'App/Shared/Layout/Navigation.html'"></div>
+
+	<div id="page-wrapper" class="gray-bg {{$state.current.name}}">
+		<div ng-include="'App/Shared/Layout/TopNavbar.html'"></div>
+
+		<div data-ui-view></div>
+
+		<div ng-include="'App/Shared/Layout/Footer.html'"></div>
+	</div>
+</div>

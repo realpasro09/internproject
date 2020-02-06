@@ -1,0 +1,63 @@
+{
+  "name": "lawyer",
+  "version": "2.5.0",
+  "authors": [
+    "Prosoft - WebAppLayers"
+  ],
+  "description": "Lawyer Management System",
+  "main": "app/index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "appPath": "src",
+  "dependencies": {
+    "jquery": "2",
+    "bootstrap": "3",
+	"font-awesome": "fontawesome#4.6.3",
+    "select2": "^4.0.3",
+    "select2-bootstrap-theme": "^0.1.0-beta.9",
+    "pace": "~1.0.2",
+    "metisMenu": "~2.0.2",
+    "slim-scroll": "^1.2.1",
+    "moment": "~2.10.6",
+    "animate.css": "2",
+    "underscore": "^1.8.3",
+    "angular": "1",
+    "angular-sanitize": "1",
+    "angular-animate": "1",
+    "angular-ui-router": "^0.3.1",
+    "angular-bootstrap": "^2.1.3",
+    "angular-ui-sortable": "^0.14.3",
+    "angular-block-ui": "^0.2.2",
+    "angular-ui-calendar": "^1.0.2",
+    "highcharts": "highcharts.com#^4.2.6",
+    "ng-flow": "~2"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css"
+      ]
+    },
+    "select2": {
+      "main": [
+        "dist/js/select2.js",
+        "dist/css/select2.css"
+      ]
+    },
+    "select2-bootstrap-theme": {
+      "main": [
+        "dist/select2-bootstrap.min.css"
+      ]
+    }
+  }
+}

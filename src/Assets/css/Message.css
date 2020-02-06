@@ -1,0 +1,129 @@
+﻿.message-view {
+	background: #efefef;
+	padding: 10px;
+    margin-bottom: 15px;
+    overflow-y: auto;
+}
+
+.chat-message {
+  padding: 0;
+}
+.message-avatar {
+    height: 48px;
+    width: 48px;
+    border: 1px solid #e7eaec;
+    border-radius: 4px;
+    margin-top: 1px;
+}
+.message-view .chat-message.left .message-avatar {
+  float: left;
+  margin-right: 10px;
+}
+.message-view .chat-message.right .message-avatar {
+  float: right;
+  margin-left: 10px;
+}
+.message {
+  background-color: #fff;
+  border: 1px solid #e7eaec;
+  text-align: left;
+  display: block;
+  padding: 10px 20px;
+  position: inherit;
+  border-radius: 4px;
+}
+.message-view .chat-message.left .message-date {
+  float: right;
+}
+.message-view .chat-message.right .message-date {
+  float: left;
+}
+.message-view .chat-message.left .message {
+  text-align: left;
+  margin-left: 55px;
+}
+.message-view .chat-message.right .message {
+  text-align: right;
+  margin-right: 55px;
+}
+.message-date {
+  font-size: 10px;
+  color: #888888;
+}
+.message-content {
+  display: block;
+}
+
+/* chat input */
+.chat-form {
+    /*margin-top: 15px;*/
+    padding: 10px;
+    background-color: #e9eff3;
+    overflow: hidden;
+    clear: both;
+}
+
+.chat-form .input-cont {
+    margin-right: 40px;
+}
+
+.chat-form .input-cont .form-control {
+    border: 1px solid #ddd;
+    width: 100%!important;
+    margin-top: 0;
+    background-color: #fff!important;
+	outline: 0!important;
+}
+
+.chat-form .btn-cont {
+    margin-top: -58px;
+    position: relative;
+    float: right;
+    width: 44px;
+}
+
+.chat-form .btn-cont .arrow {
+    position: absolute;
+    top: 22px;
+    right: 43px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #4d90fe;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btn.blue {
+    color: #FFF;
+    background-color: #3598dc;
+    border-color: #3598dc;
+	    line-height: 1.70;
+    margin-top: 5px;
+}
+
+.modal .modal-body {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.highcharts-container {
+	position: inherit!important;
+}
+
+.fc-row.fc-widget-header {
+	position: inherit!important;
+}
+
+.fc-view, .fc-view > table {
+   position: inherit!important;
+}
+
+.select2-container {
+	width: 94.5%!important;
+}
+
+.select2-selection {
+	border-radius: 1px!important;
+    border-color: #E5E6E7!important;
+}

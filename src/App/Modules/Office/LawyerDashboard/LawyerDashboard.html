@@ -1,0 +1,117 @@
+﻿<div class="row animated fadeIn">
+	<div class="col-lg-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>Search Criteria</h5>
+				<div data-ibox-tools></div>
+			</div>
+
+			<div class="ibox-content" style="display: none;">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<label class="col-sm-1 control-label">Case Id</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" ng-model="Filter.CaseId">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Title</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" ng-model="Filter.TaskTitle">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Resource</label>
+							<div class="col-sm-8">
+								<select class="form-control" data-ng-model="Filter.TypeId">
+									<option value="">All</option>
+									<option value="1">Sienna Miller ($50)</option>
+									<option value="2">Christian Bale ($55 $)</option>
+									<option value="3">Mark Wahlberg ($60)</option>
+									<option value="4">Anne Hathaway ($58)</option>
+									<option value="5">Jerry Maguire ($65)</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Priority</label>
+							<div class="col-sm-8">
+								<select class="form-control" data-ng-model="Filter.PriorityId"
+										data-ng-options="priority.Id as priority.Name for priority in TaskLookups.Priorities">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Status</label>
+							<div class="col-sm-8">
+								<select class="form-control" data-ng-model="Filter.StatusId"
+										data-ng-options="status.Id as status.Name for status in TaskLookups.TaskStatus">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Due Date</label>
+							<div class="col-sm-8">
+								<p class="input-group" ng-init="DueDateOpened=false">
+									<input type="text" class="form-control" data-uib-datepicker-popup data-show-button-bar="false" ng-model="Filter.DueDateFrom" ng-click="DueDateOpened=true" data-is-open="DueDateOpened" />
+									<span class="input-group-addon" ng-init="DueDateToOpened=false">:</span>
+									<input type="text" class="form-control" data-uib-datepicker-popup data-show-button-bar="false" ng-model="Filter.DueDateTo" ng-click="DueDateToOpened=true" data-is-open="DueDateToOpened" />
+								</p>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Type</label>
+							<div class="col-sm-8">
+								<select class="form-control" data-ng-model="Filter.TypeId"
+										data-ng-options="type.Id as type.Name for type in TaskLookups.TaskTypes">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="ibox-footer clearfix">
+				<div class="pull-right">
+					<button type="button" class="btn btn-w-m btn-default" ng-click="Reset()">Reset</button>
+					<button type="button" class="btn btn-w-m btn-primary" ng-click="Search()">Search</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row margin10-height">
+	<div class="col-md-6" style=" position: inherit;">
+		<hc-chart options="ChartOptions01" class="section" style=" position: inherit;"></hc-chart>
+	</div>
+
+	<div class="col-md-6">
+		<hc-chart options="ChartOptions02" class="section"></hc-chart>
+	</div>
+</div>
+
+
+<div class="row margin10-height">
+	<div class="col-md-6">
+		<hc-chart options="ChartOptions03" class="section"></hc-chart>
+	</div>
+
+	<div class="col-md-6">
+		<hc-chart options="ChartOptions04" class="section"></hc-chart>
+	</div>
+</div>

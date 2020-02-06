@@ -1,0 +1,138 @@
+﻿<div class="row animated fadeIn">
+	<div class="col-lg-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>Search Criteria</h5>
+				<div data-ibox-tools></div>
+			</div>
+
+			<div class="ibox-content" style="display: none">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Name</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" ng-model="Filter.ResourceName">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Role</label>
+						<div class="col-sm-10">
+							<select class="form-control" data-ng-model="Filter.RoleId">
+								<option value="">All</option>
+								<option value="1">Role-1</option>
+								<option value="2">Role-2</option>
+								<option value="2">Role-3</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="ibox-footer">
+				<div class="pull-right clearfix">
+					<button type="button" class="btn btn-w-m btn-default">Reset</button>
+					<button type="button" class="btn btn-w-m btn-primary">Search</button>
+				</div>
+				<button class="btn btn-w-m btn-sm btn-warning" ng-click="Edit(false)">Add New Resource</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12 custom-pos">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<div class="table-responsive">
+					<table class="table table-striped table-center">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Name</th>
+								<th>Department</th>
+								<th>Role</th>
+								<th>Hour Rate</th>
+								<th>Email</th>
+								<th>Mobile</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<button class="btn btn-xs btn-info" ng-click="Edit(true)"><i class="fa fa-edit"></i> Edit</button>
+								</td>
+								<td>Jerry Maguire</td>
+								<td>Criminal</td>
+								<td>Role-1</td>
+								<td>$65</td>
+								<td>Jerry@gmail.com</td>
+								<td>065215324</td>
+								<td>
+									<button class="btn btn-xs btn-danger" data-ui-sref="Master.Page.TasksBoard"><i class="fa fa-trello"></i> Tasks</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<button class="btn btn-xs btn-info" ng-click="Edit(true)"><i class="fa fa-edit"></i> Edit</button>
+								</td>
+								<td>Anne Hathaway</td>
+								<td>Criminal</td>
+								<td>Role-2</td>
+								<td>$58</td>
+								<td>Hathaway@gmail.com</td>
+								<td>05964655</td>
+								<td>
+									<button class="btn btn-xs btn-danger" data-ui-sref="Master.Page.TasksBoard"><i class="fa fa-trello"></i> Tasks</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<button class="btn btn-xs btn-info" ng-click="Edit(true)"><i class="fa fa-edit"></i> Edit</button>
+								</td>
+								<td>Mark Wahlberg</td>
+								<td>larceny</td>
+								<td>Role-3</td>
+								<td>$60</td>
+								<td>Wahlberg@gmail.com</td>
+								<td>652186542</td>
+								<td>
+									<button class="btn btn-xs btn-danger" data-ui-sref="Master.Page.TasksBoard"><i class="fa fa-trello"></i> Tasks</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<button class="btn btn-xs btn-info" ng-click="Edit(true)"><i class="fa fa-edit"></i> Edit</button>
+								</td>
+								<td>Sienna Miller</td>
+								<td>larceny</td>
+								<td>Role-4</td>
+								<td>$50</td>
+								<td>Miller@gmail.com</td>
+								<td>6743435467</td>
+								<td>
+									<button class="btn btn-xs btn-danger" data-ui-sref="Master.Page.TasksBoard"><i class="fa fa-trello"></i> Tasks</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<button class="btn btn-xs btn-info" ng-click="Edit(true)"><i class="fa fa-edit"></i> Edit</button>
+								</td>
+								<td>Christian Bale</td>
+								<td>Criminal</td>
+								<td>Role-5</td>
+								<td>$55</td>
+								<td>Bale@gmail.com</td>
+								<td>965872153</td>
+								<td>
+									<button class="btn btn-xs btn-danger" data-ui-sref="Master.Page.TasksBoard"><i class="fa fa-trello"></i> Tasks</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,113 @@
+﻿<div class="row animated fadeIn">
+	<div class="col-lg-2">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Request Initiated</h3>
+				<p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list</p>
+
+				<!--<div class="input-group">
+					<input type="text" placeholder="Add new task. " class="input input-sm form-control">
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-sm btn-white"> <i class="fa fa-plus"></i> Add task</button>
+					</span>
+				</div>-->
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="RequestInitiated">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in RequestInitiated">
+						{{task.content}}
+						<div class="agile-detail">
+							<a href="#" class="pull-right btn btn-xs btn-white">{{task.tagName}}</a>
+							<i class="fa fa-clock-o"></i> {{task.date}}
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-2">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>In Progress</h3>
+				<p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list</p>
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="InProgress">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in InProgress">
+						{{task.content}}
+						<div class="agile-detail">
+							<a href="#" class="pull-right btn btn-xs btn-white">{{task.tagName}}</a>
+							<i class="fa fa-clock-o"></i> {{task.date}}
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-2">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Pending Internal</h3>
+				<p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list</p>
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="PendingInternal">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in PendingInternal">
+						{{task.content}}
+						<div class="agile-detail">
+							<a href="#" class="pull-right btn btn-xs btn-white">{{task.tagName}}</a>
+							<i class="fa fa-clock-o"></i> {{task.date}}
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-2">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Pending External</h3>
+				<p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list
+				</p>
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="PendingExternal">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in PendingExternal">
+						{{task.content}}
+						<div class="agile-detail">
+							<a href="#" class="pull-right btn btn-xs btn-white">{{task.tagName}}</a>
+							<i class="fa fa-clock-o"></i> {{task.date}}
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-2">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Cancelled</h3>
+				<p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list
+				</p>
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Cancelled">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in Cancelled">
+						{{task.content}}
+						<div class="agile-detail">
+							<a href="#" class="pull-right btn btn-xs btn-white">{{task.tagName}}</a>
+							<i class="fa fa-clock-o"></i> {{task.date}}
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-2">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Closed</h3>
+				<p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list</p>
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Closed">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in Closed">
+						{{task.content}}
+						<div class="agile-detail">
+							<a href="#" class="pull-right btn btn-xs btn-white">{{task.tagName}}</a>
+							<i class="fa fa-clock-o"></i> {{task.date}}
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

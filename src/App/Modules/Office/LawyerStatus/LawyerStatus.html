@@ -1,0 +1,224 @@
+﻿<div class="row animated fadeIn">
+	<div class="col-lg-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>Search Criteria</h5>
+				<div data-ibox-tools></div>
+			</div>
+
+			<div class="ibox-content" style="display: none;">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<label class="col-sm-1 control-label">Case Id</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" ng-model="Filter.CaseId">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Title</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" ng-model="Filter.TaskTitle">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Resource</label>
+							<div class="col-sm-8">
+								<select class="form-control" data-ng-model="Filter.ResourceId">
+									<option value="">All</option>
+									<option value="1">Sienna Miller ($50)</option>
+									<option value="2">Christian Bale ($55 $)</option>
+									<option value="3">Mark Wahlberg ($60)</option>
+									<option value="4">Anne Hathaway ($58)</option>
+									<option value="5">Jerry Maguire ($65)</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Priority</label>
+							<div class="col-sm-8">
+								<select class="form-control" data-ng-model="Filter.PriorityId"
+										data-ng-options="priority.Id as priority.Name for priority in TaskLookups.Priorities">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Status</label>
+							<div class="col-sm-8">
+								<select class="form-control" data-ng-model="Filter.StatusId"
+										data-ng-options="status.Id as status.Name for status in TaskLookups.TaskStatus">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Due Date</label>
+							<div class="col-sm-8">
+								<p class="input-group" ng-init="DueDateOpened=false">
+									<input type="text" class="form-control" data-uib-datepicker-popup data-show-button-bar="false" ng-model="Filter.DueDateFrom" ng-click="DueDateOpened=true" data-is-open="DueDateOpened" />
+									<span class="input-group-addon" ng-init="DueDateToOpened=false">:</span>
+									<input type="text" class="form-control" data-uib-datepicker-popup data-show-button-bar="false" ng-model="Filter.DueDateTo" ng-click="DueDateToOpened=true" data-is-open="DueDateToOpened" />
+								</p>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<label class="col-sm-2 control-label">Type</label>
+							<div class="col-sm-8">
+								<select class="form-control" data-ng-model="Filter.TypeId"
+										data-ng-options="type.Id as type.Name for type in TaskLookups.TaskTypes">
+									<option value="">All</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="ibox-footer clearfix">
+				<div class="pull-right">
+					<button type="button" class="btn btn-w-m btn-default" ng-click="Reset()">Reset</button>
+					<button type="button" class="btn btn-w-m btn-primary">Search</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="ibox">
+	<div class="ibox-footer clearfix">
+		<p class="font-size-24 pull-left">Total Billing: $ 25,000</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-3" style="position: inherit">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Open</h3>
+				<p class="small">
+					Billing: $ 8,000 for 3 tasks
+				</p>
+				<ul data-ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Open">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in Open">
+						<a href="javascript:;" class="{{task.MessageIcon}} pull-right margin10-left" ng-click="Message()">
+							<i class="fa fa-envelope-o"></i>
+							<span class="message-badge badge badge-danger" ng-if="task.MessageNumber"> {{task.MessageNumber}} </span>
+						</a>
+						<a href="javascript:;" ng-if="task.HaveAttachment" class="font-size-18 font-color-navy pull-right" ng-click="AttachFiles()">
+							<i class="fa fa-paperclip"></i>
+						</a>
+						<div ng-click="EditTask(true)">
+							<div><b>{{task.title}}</b></div>
+							<div><b>Effort(Est.): </b>{{task.Estimate}}</div>
+							<div><b>Billing: </b>{{task.Billing}}</div>
+							<div><b>DueDate: </b>{{task.DueDate| date: 'yyyy-MM-dd'}}</div>
+							<div class="agile-detail">
+								<span class="label label-default">{{task.type}}</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3" style="position: inherit">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>In Progress</h3>
+				<p class="small">
+					Billing: $ 6,000 for 3 tasks
+				</p>
+				<ul data-ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="InProgress">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in InProgress">
+						<a href="javascript:;" class="{{task.MessageIcon}} pull-right margin10-left" ng-click="Message()">
+							<i class="fa fa-envelope-o"></i>
+							<span class="message-badge badge badge-danger" ng-if="task.MessageNumber"> {{task.MessageNumber}} </span>
+						</a>
+						<a href="javascript:;" ng-if="task.HaveAttachment" class="font-size-18 font-color-navy pull-right" ng-click="AttachFiles()">
+							<i class="fa fa-paperclip"></i>
+						</a>
+						<div ng-click="EditTask(true)">
+							<div><b>{{task.title}}</b></div>
+							<div><b>Effort(Est.): </b>{{task.Estimate}}</div>
+							<div><b>Billing: </b>{{task.Billing}}</div>
+							<div><b>DueDate: </b>{{task.DueDate| date: 'yyyy-MM-dd'}}</div>
+							<div class="agile-detail">
+								<span class="label label-default">{{task.type}}</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3" style="position: inherit">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Pending</h3>
+				<p class="small">
+					Billing: $ 5,000 for 2 tasks
+				</p>
+				<ul data-ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Pending">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in Pending">
+						<a href="javascript:;" class="{{task.MessageIcon}} pull-right margin10-left" ng-click="Message()">
+							<i class="fa fa-envelope-o"></i>
+							<span class="message-badge badge badge-danger" ng-if="task.MessageNumber"> {{task.MessageNumber}} </span>
+						</a>
+						<a href="javascript:;" ng-if="task.HaveAttachment" class="font-size-18 font-color-navy pull-right" ng-click="AttachFiles()">
+							<i class="fa fa-paperclip"></i>
+						</a>
+						<div ng-click="EditTask(true)">
+							<div><b>{{task.title}}</b></div>
+							<div><b>Effort(Est.): </b>{{task.Estimate}}</div>
+							<div><b>Billing: </b>{{task.Billing}}</div>
+							<div><b>DueDate: </b>{{task.DueDate| date: 'yyyy-MM-dd'}}</div>
+							<div class="agile-detail">
+								<span class="label label-default">{{task.type}}</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3" style="position: inherit">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Done</h3>
+				<p class="small">
+					Billing: $ 6,000 for 2 tasks
+				</p>
+				<ul data-ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Done">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in Done">
+						<a href="javascript:;" class="{{task.MessageIcon}} pull-right margin10-left" ng-click="Message()">
+							<i class="fa fa-envelope-o"></i>
+							<span class="message-badge badge badge-danger" ng-if="task.MessageNumber"> {{task.MessageNumber}} </span>
+						</a>
+						<a href="javascript:;" ng-if="task.HaveAttachment" class="font-size-18 font-color-navy pull-right" ng-click="AttachFiles()">
+							<i class="fa fa-paperclip"></i>
+						</a>
+						<div ng-click="EditTask(true)">
+							<div><b>{{task.title}}</b></div>
+							<div><b>Effort(Est.): </b>{{task.Estimate}}</div>
+							<div><b>Billing: </b>{{task.Billing}}</div>
+							<div><b>DueDate: </b>{{task.DueDate| date: 'yyyy-MM-dd'}}</div>
+							<div class="agile-detail">
+								<span class="label label-default">{{task.type}}</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+﻿<div class="modal-header">
+	<button type="button" class="close" data-ng-click="Close()" aria-hidden="true">×</button>
+	<h3 class="modal-title">
+		<!--<span>Add New Task Template</span>-->
+		<span>{{IsEdit?'Edit Task Template':'Add New Task Template'}}</span>
+	</h3>
+</div>
+
+<div class="modal-body">
+	<form class="form-horizontal">
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Task Title</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" ng-model="Task.Title">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Type</label>
+			<div class="col-sm-10">
+				<select class="form-control" data-ng-model="Task.TypeId"
+						data-ng-options="type.Id as type.Name for type in CaseLookups.TaskTypes">
+					<option value="">All</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Priority</label>
+			<div class="col-sm-10">
+				<select class="form-control" data-ng-model="Task.PriorityId"
+						data-ng-options="priority.Id as priority.Name for priority in CaseLookups.Priorities">
+					<option value="">All</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Effort (Est.)</label>
+			<div class="col-sm-10">
+				<div class="input-group">
+					<input type="text" class="form-control" ng-model="Case.EstimatedEffort">
+					<span class="input-group-addon"><i class="fa fa-clock-o"></i> hrs</span>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="modal-footer">
+	<button class="btn btn-default" data-ng-click="Close()"><i class="fa fa-close"></i>&nbsp;Close</button>
+	<button class="btn btn-primary" data-ng-click="Save()">Save</button>
+</div>

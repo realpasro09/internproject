@@ -1,0 +1,110 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+		<ul data-side-navigation class="nav metismenu" id="side-menu">
+			<li class="nav-header">
+				<div class="profile-element text-center">
+					<a href="javascript:;" data-ui-sref="Master.Page.CasesManagement">
+						<img class="size-70" src="Assets/img/lawLogo.png"/>
+					</a>
+				</div>
+				<div class="logo-element">
+					<a href="javascript:;" data-ui-sref="Master.Page.CasesManagement">
+						<img class="size-40" src="Assets/img/lawLogo.png"/>
+					</a>
+				</div>
+				<span class="clear text-center">
+					<span class="block m-t-xs">
+						<strong class="font-color-white font-bold">David Williams</strong>
+					</span> <span class="font-color-white text-xs block">{{$root.CurrentUser.Role}}</span>
+				</span>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='office' || $root.CurrentUser.Role==='enterprise'">
+				<a data-ui-sref="Master.Page.Office.LawyerDashboard"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span></a>
+			</li>
+
+			<li ng-class="{active: $state.includes('Master.Page.CasesManagement') || $state.includes('Master.Page.CaseAddEdit')}" ng-if="$root.CurrentUser.Role!=='lawyer'">
+				<a href="javascript:;"><i class="fa fa-legal"></i> <span class="nav-label">Cases</span> <span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('Master.Page.CasesManagement') || $state.includes('Master.Page.CaseAddEdit')}">
+					<li data-ui-sref-active="active"><a data-ui-sref="Master.Page.CasesManagement"><i class="fa fa-briefcase"></i> Cases Management</a></li>
+					<li data-ui-sref-active="active"><a data-ui-sref="Master.Page.CaseAddEdit({isEdit: false})"><i class="glyphicon glyphicon-plus"></i> Add New Case</a></li>
+					<!--<li data-ui-sref-active="active"><a data-ui-sref="Master.Page.CaseBoard"><i class="fa fa-tasks"></i> Cases Board</a></li>-->
+				</ul>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='admin'">
+				<a data-ui-sref="Master.Page.ResourcesManagement"><i class="fa fa-users"></i> <span class="nav-label">Resources</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='admin'">
+				<a data-ui-sref="Master.Page.TasksManagement"><i class="fa fa-archive"></i> <span class="nav-label">Tasks</span></a>
+			</li>
+
+			<li ng-class="{active: $state.includes('Master.Page.ClientsManagement') || $state.includes('Master.Page.ClientAddEdit')}" ng-if="$root.CurrentUser.Role==='admin'">
+				<a href="javascript:;"><i class="fa fa-slideshare"></i> <span class="nav-label">Clients</span> <span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('Master.Page.ClientsManagement') || $state.includes('Master.Page.ClientAddEdit')}">
+					<li data-ui-sref-active="active"><a data-ui-sref="Master.Page.ClientsManagement"><i class="fa fa-sitemap"></i> Clients Management</a></li>
+					<li data-ui-sref-active="active"><a data-ui-sref="Master.Page.ClientAddEdit"><i class="glyphicon glyphicon-plus"></i> Add New Client </a></li>
+				</ul>
+			</li>
+
+			<li ng-class="{active: $state.includes('Master.Page.TaskTemplateManagement')}" ng-if="$root.CurrentUser.Role==='admin'">
+				<a href="javascript:;"><i class="fa fa-cogs"></i> <span class="nav-label">Settings</span> <span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('Master.Page.TaskTemplateManagement')}">
+					<li data-ui-sref-active="active"><a data-ui-sref="Master.Page.TaskTemplateManagement"><i class="fa fa-briefcase"></i> Task Template</a></li>
+				</ul>
+			</li>
+
+
+			<!-- Lawyer -->
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='lawyer'">
+				<a data-ui-sref="Master.Page.Lawyer.LawyerDashboard"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='lawyer'">
+				<a data-ui-sref="Master.Page.Lawyer.LawyerTasks"><i class="fa fa-archive"></i> <span class="nav-label">Tasks</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='lawyer'">
+				<a data-ui-sref="Master.Page.Lawyer.LawyerStatus"><i class="fa fa-trello"></i> <span class="nav-label">Tasks Status</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='lawyer'">
+				<a data-ui-sref="Master.Page.Lawyer.LawyerDueDate"><i class="fa fa-clock-o"></i> <span class="nav-label">Tasks DueDate</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='lawyer'">
+				<a data-ui-sref="Master.Page.Lawyer.LawyerCalendar"><i class="fa fa-calendar"></i> <span class="nav-label">Calendar</span></a>
+			</li>
+
+			<!-- office or enterprise -->
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='office' || $root.CurrentUser.Role==='enterprise'">
+				<a data-ui-sref="Master.Page.Office.LawyerTasks"><i class="fa fa-archive"></i> <span class="nav-label">Tasks</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='office' || $root.CurrentUser.Role==='enterprise'">
+				<a data-ui-sref="Master.Page.Office.LawyerStatus"><i class="fa fa-trello"></i> <span class="nav-label">Tasks Status</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='office' || $root.CurrentUser.Role==='enterprise'">
+				<a data-ui-sref="Master.Page.Office.LawyerDueDate"><i class="fa fa-clock-o"></i> <span class="nav-label">Tasks DueDate</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='office' || $root.CurrentUser.Role==='enterprise'">
+				<a data-ui-sref="Master.Page.Office.LawyerCalendar"><i class="fa fa-calendar"></i> <span class="nav-label">Calendar</span></a>
+			</li>
+
+			<li data-ui-sref-active="active">
+				<a data-ui-sref="Master.Page.MessagesCenter"><i class="fa fa-paper-plane-o"></i> <span class="nav-label">Message Center</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='office' || $root.CurrentUser.Role==='enterprise'">
+				<a data-ui-sref="Master.Page.ResourcesManagement"><i class="fa fa-users"></i> <span class="nav-label">Resources</span></a>
+			</li>
+
+			<li data-ui-sref-active="active" ng-if="$root.CurrentUser.Role==='enterprise'">
+				<a data-ui-sref="Master.Page.Office.DepartmentsManagement"><i class="fa fa-sitemap"></i> <span class="nav-label">Departments</span></a>
+			</li>
+		</ul>
+	</div>
+</nav>

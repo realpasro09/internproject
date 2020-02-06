@@ -1,0 +1,94 @@
+﻿<div class="ibox">
+	<div class="ibox-footer clearfix">
+		<p class="font-size-24 pull-left">Total Billing: $ 50,000.00</p>
+		<div class="pull-right">
+			<button class="btn btn-w-m btn-lg btn-warning" ng-click="EditTask(false)">Add New Task</button>
+		</div>
+	</div>
+</div>
+<div class="row animated fadeIn">
+	<div class="col-lg-3">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Open</h3>
+				<!--<p class="small">
+					<i class="fa fa-hand-o-up"></i> Drag task between list
+				</p>-->
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Open">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in InProgress" ng-click="EditTask(true)">
+						<div><b>{{task.title}}</b></div>
+						<div>{{task.resourceName}}</div>
+						<div><b>Effort(Est.): </b>{{task.Estimate}}</div>
+						<div><b>Billing: </b>{{task.Billing}}</div>
+						<div class="agile-detail">
+							<span class="label label-default">{{task.type}}</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>In Progress</h3>
+				<!--<p class="small">
+					<i class="fa fa-hand-o-up"></i> Drag task between list
+				</p>-->
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="InProgress">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in InProgress" ng-click="EditTask(true)">
+						<div><b>{{task.title}}</b></div>
+						<div>{{task.resourceName}}</div>
+						<div><b>Effort(Est.): </b>{{task.Estimate}}</div>
+						<div><b>Billing: </b>{{task.Billing}}</div>
+						<div class="agile-detail">
+							<span class="label label-default">{{task.type}}</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Pending</h3>
+				<!--<p class="small">
+					<i class="fa fa-hand-o-up"></i> Drag task between list
+				</p>-->
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Pending">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in InProgress" ng-click="EditTask(true)">
+						<div><b>{{task.title}}</b></div>
+						<div>{{task.resourceName}}</div>
+						<div><b>Effort(Est.): </b>{{task.Estimate}}</div>
+						<div><b>Billing: </b>{{task.Billing}}</div>
+						<div class="agile-detail">
+							<span class="label label-default">{{task.type}}</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3">
+		<div class="ibox">
+			<div class="ibox-content">
+				<h3>Done</h3>
+				<!--<p class="small">
+					<i class="fa fa-hand-o-up"></i> Drag task between list
+				</p>-->
+				<ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Done">
+					<li class="{{task.statusClass}}-element" ng-repeat="task in InProgress" ng-click="EditTask(true)">
+						<div><b>{{task.title}}</b></div>
+						<div>{{task.resourceName}}</div>
+						<div><b>Effort(Est.): </b>{{task.Estimate}}</div>
+						<div><b>Billing: </b>{{task.Billing}}</div>
+						<div class="agile-detail">
+							<span class="label label-default">{{task.type}}</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,141 @@
+﻿<!--<div class="wrapper wrapper-content animated fadeIn"></div>-->
+<div class="row animated fadeIn">
+	<div class="col-lg-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<!--<h5>Add New Case</h5>-->
+				<h5>{{$state.current.data.pageTitle}}</h5>
+			</div>
+
+			<div class="ibox-content">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Title</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" ng-model="Case.Title">
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Summary</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" ng-model="Case.Summary" rows="3"></textarea>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Type</label>
+						<div class="col-sm-10">
+							<select class="form-control" data-ng-model="Case.TypeId"
+									data-ng-options="type.Id as type.Name for type in CaseLookups.Types">
+								<option value="">All</option>
+							</select>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Stage</label>
+						<div class="col-sm-10">
+							<select class="form-control" data-ng-model="Case.StageId"
+									data-ng-options="stage.Id as stage.Name for stage in CaseLookups.Stages">
+								<option value="">All</option>
+							</select>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Priority</label>
+						<div class="col-sm-10">
+							<select class="form-control" data-ng-model="Case.PriorityId"
+									data-ng-options="priority.Id as priority.Name for priority in CaseLookups.Priorities">
+								<option value="">All</option>
+							</select>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Case File/Ref #</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" ng-model="Case.CaseFileRef">
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Arrival Date</label>
+						<div class="col-sm-10">
+							<p class="input-group" ng-init="IsOpened=false">
+								<input type="text" class="form-control" data-uib-datepicker-popup data-show-button-bar="false" ng-model="Case.ArrivalDate" ng-click="IsOpened=true" data-is-open="IsOpened" />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="IsOpened=true"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Filed on</label>
+						<div class="col-sm-10">
+							<p class="input-group" ng-init="FiledIsOpened=false">
+								<input type="text" class="form-control" data-uib-datepicker-popup data-show-button-bar="false" ng-model="Case.FieldOn" ng-click="FiledIsOpened=true" data-is-open="FiledIsOpened" />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="FiledIsOpened=true"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Due Date</label>
+						<div class="col-sm-10">
+							<p class="input-group" ng-init="DueDateOpened=false">
+								<input type="text" class="form-control" data-uib-datepicker-popup data-show-button-bar="false" ng-model="Case.DueDate" ng-click="DueDateOpened=true" data-is-open="DueDateOpened" />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="DueDateOpened=true"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Responsible</label>
+						<div class="col-sm-10">
+							<select class="form-control" data-ng-model="Case.TypeId">
+								<option value="">All</option>
+								<option value="1">Sienna Miller</option>
+								<option value="2">Christian Bale</option>
+								<option value="3">Mark Wahlberg</option>
+								<option value="4">Anne Hathaway</option>
+								<option value="5">Jerry Maguire</option>
+							</select>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Client Name</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" ng-model="Case.ClientName">
+						</div>
+					</div>
+					<!--<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Estimated Effort</label>
+						<div class="col-sm-10">
+							<div class="input-group m-b">
+								<input type="text" class="form-control" ng-model="Case.EstimatedEffort">
+								<span class="input-group-addon"><i class="fa fa-clock-o"></i> HR</span>
+							</div>
+						</div>
+					</div>-->
+				</form>
+			</div>
+
+			<div class="ibox-footer">
+				<div class="text-right">
+					<!--<button type="button" class="btn btn-w-m btn-default">Cancel</button>-->
+					<button type="button" data-ng-if="$state.params.isEdit" class="btn btn-w-m btn-primary" data-ui-sref="Master.Page.CasesManagement">Save</button>
+					<button type="button" data-ng-if="!$state.params.isEdit" class="btn btn-w-m btn-warning" data-ui-sref="Master.Page.TasksBoard">Save & generate default tasks</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

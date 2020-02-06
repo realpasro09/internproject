@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Page title set in pageTitle directive -->
+	<title data-page-title></title>
+	<link rel="icon" href="Assets/img/favicon.ico">
+
+	<!-- Google Open Sans -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<!-- build:css(.) Assets/css/vendor.css -->
+	<!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />-->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="bower_components/select2/dist/css/select2.css" />
+	<link rel="stylesheet" href="bower_components/select2-bootstrap-theme/dist/select2-bootstrap.min.css" />
+	<link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css" />
+	<link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+	<link rel="stylesheet" href="bower_components/angular-block-ui/dist/angular-block-ui.css" />
+	<link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css Assets/css/styles.css -->
+	<link href="Assets/css/style.css" rel="stylesheet" />
+	<link href="Assets/css/Master.css" rel="stylesheet" />
+	<link href="Assets/css/Site.css" rel="stylesheet" />
+	<link href="Assets/css/Login.css" rel="stylesheet" />
+	<link href="Assets/css/Message.css" rel="stylesheet" />
+	<!-- endbuild -->
+
+</head>
+
+<body  ng-class="$root.GetSkin()" ng-controller="AppController">
+
+	<div data-ui-view></div>
+
+	<!-- build:js(.) vendor.js -->
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/select2/dist/js/select2.js"></script>
+	<script src="bower_components/pace/pace.js"></script>
+	<script src="bower_components/metisMenu/dist/metisMenu.js"></script>
+	<script src="bower_components/moment/moment.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+	<script src="bower_components/angular-ui-sortable/sortable.js"></script>
+	<script src="bower_components/angular-block-ui/dist/angular-block-ui.js"></script>
+	<script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+	<script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+	<script src="bower_components/highcharts/lib/highcharts.js"></script>
+	<script src="bower_components/flow.js/dist/flow.js"></script>
+	<script src="bower_components/ng-flow/dist/ng-flow.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:js scripts.js -->
+	<script src="App/Shared/inspinia.js"></script>
+
+	<script src="App/Core/App.js"></script>
+	<script src="App/Core/Routes.js"></script>
+	<script src="App/Core/AppController.js"></script>
+	<script src="App/Core/Config.js"></script>
+	<script src="App/Shared/Data/Data.js"></script>
+
+	<script src="App/Shared/Directives/PageTitle.js"></script>
+	<script src="App/Shared/Directives/IboxTools.js"></script>
+	<script src="App/Shared/Directives/MinimalizeSidebar.js"></script>
+	<script src="App/Shared/Directives/SideNavigation.js"></script>
+	<script src="App/Shared/Directives/Select2.js"></script>
+	<script src="App/Shared/Directives/ChartsDirective.js"></script>
+
+	<script src="App/Modules/Login/Login.js"></script>
+	<script src="App/Modules/Cases/CasesManagement/CasesManagement.js"></script>
+	<script src="App/Modules/Cases/CaseAddEdit/CaseAddEdit.js"></script>
+	<script src="App/Modules/Cases/CaseBoard/CaseBoard.js"></script>
+	<script src="App/Modules/Tasks/TasksManagement/TasksManagement.js"></script>
+	<script src="App/Modules/Tasks/TasksBoard/TasksBoard.js"></script>
+	<script src="App/Modules/Tasks/TasksAddEdit/TasksAddEdit.js"></script>
+	<script src="App/Modules/Clients/ClientAddEdit/ClientAddEdit.js"></script>
+	<script src="App/Modules/Clients/ClientsManagement/ClientsManagement.js"></script>
+	<script src="App/Modules/Tasks/TasksBoard/TasksBoard.js"></script>
+	<script src="App/Modules/Settings/TaskTemplate/TaskTemplateManagement/TaskTemplateManagement.js"></script>
+	<script src="App/Modules/Settings/TaskTemplate/TaskTemplateAdd/TaskTemplateAdd.js"></script>
+	<script src="App/Modules/Resources/ResourcesManagement/ResourcesManagement.js"></script>
+	<script src="App/Modules/Resources/ResourceAddEdit/ResourceAddEdit.js"></script>
+	<script src="App/Modules/Lawyer/LawyerTasks/LawyerTasks.js"></script>
+	<script src="App/Modules/Lawyer/LawyerStatus/LawyerStatus.js"></script>
+	<script src="App/Modules/Lawyer/LawyerAddEdit/LawyerAddEdit.js"></script>
+	<script src="App/Modules/Lawyer/LawyerDueDate/LawyerDueDate.js"></script>
+	<script src="App/Modules/Lawyer/LawyerDashboard/LawyerDashboard.js"></script>
+	<script src="App/Modules/Lawyer/LawyerCalendar/LawyerCalendar.js"></script>
+	<script src="App/Modules/Lawyer/TasksPopup/TasksPopup.js"></script>
+	<script src="App/Modules/Office/LawyerStatus/LawyerStatus.js"></script>
+	<script src="App/Modules/Office/LawyerDueDate/LawyerDueDate.js"></script>
+	<script src="App/Modules/Office/LawyerDashboard/LawyerDashboard.js"></script>
+	<script src="App/Modules/Office/LawyerCalendar/LawyerCalendar.js"></script>
+	<script src="App/Modules/Office/LawyerAddEdit/LawyerAddEdit.js"></script>
+	<script src="App/Modules/Office/TasksPopup/TasksPopup.js"></script>
+	<script src="App/Modules/Office/LawyerTasks/LawyerTasks.js"></script>
+	<script src="App/Modules/Messages/MessagesCenter/MessagesCenter.js"></script>
+	<script src="App/Modules/Messages/MessagesView/MessagesView.js"></script>
+	<script src="App/Modules/Tasks/TaskAttachements/TaskAttachements.js"></script>
+	<script src="App/Modules/Departments/DepartmentsManagement/DepartmentsManagement.js"></script>
+	<script src="App/Modules/Departments/DepartmentAddEdit/DepartmentAddEdit.js"></script>
+	<!-- endbuild -->
+
+</body>
+</html>
